@@ -15,17 +15,20 @@ public class Part4 {
        URLResource ur = new URLResource("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
        for (String wd: ur.words())
        {
+           String wdTemp=wd.toLowerCase();
            int start=wd.indexOf("\"");
            int end=wd.lastIndexOf("\"");
            if(start!=-1 && end!=start) {
                String searchItem=wd.substring(start+1,end);
-               if(searchItem.contains(word)) System.out.println(searchItem);
+               String searchItemT=wdTemp.substring(start+1,end);
+               if(searchItemT.contains(word)) System.out.println(searchItem);
             }
         }
     }
     public void testing()
     {
-        System.out.println('\u000C');
+        //System.out.println('\u000C');
+        checkUrl("youtube.com");
         checkUrl("youtube.com");
     }
 }
